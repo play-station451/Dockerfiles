@@ -13,10 +13,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 2. Download and extract the application
-RUN wget -O dcts-shipping-latest.zip \
-    https://github.com/hackthedev/dcts-shipping/releases/latest/download/dcts-shipping.zip \
-    && unzip dcts-shipping-latest.zip -d . \
-    && rm dcts-shipping-latest.zip
+RUN wget https://github.com/hackthedev/dcts-shipping/archive/refs/tags/v1.5.6.6.zip \
+    && unzip v1.5.6.6.zip -d . \
+    && rm v1.5.6.6.zip
 
 # 3. Install Bun dependencies
 RUN bun install
